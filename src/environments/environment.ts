@@ -5,7 +5,11 @@
 export const environment = {
   production: false,
   login:'https://identitytoolkit.googleapis.com',
-  apiKey:'AIzaSyAmzyyJ-cykgI-Nqy_Htajmh1EsLqmUE8Q'
+  marvelapi:'developer.marvel.com',
+  apiKey:'AIzaSyAmzyyJ-cykgI-Nqy_Htajmh1EsLqmUE8Q',
+  marvelApiKey:'1ee494683b97ee0b7bcc1085a35205d0',
+  marvelHash:'e601cfac62957843bef52507acd3022d9ef40c3c'
+
 };
 
 /*
