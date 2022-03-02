@@ -1,0 +1,22 @@
+.header {
+  padding: 2rem 3rem;
+  background-color: black;
+  &__container {
+    color: white;
+    display: flex;
+    font-size: 1.5rem;
+    align-items: center;
+    justify-content: space-between;
+  }
+  &__logo {
+    width: 10rem;
+  }
+
+  &__item {
+    transition: all 0.5s;
+    cursor: pointer;
+    &:hover {
+      color: red;
+    }
+  }
+}
