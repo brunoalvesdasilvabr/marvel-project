@@ -1,0 +1,53 @@
+<div class="login__container">
+  <div class="login__logo-container">
+    <img
+      class="login__logo"
+      src="../../../../../assets/images/logo/Marvel_Logo..png"
+    />
+  </div>
+
+  <form class="login__form" [formGroup]="loginForm">
+    <span class="p-float-label">
+      <input
+        class="p-inputtext-lg"
+        id="email"
+        name="email"
+        type="email"
+        pInputText
+        formControlName="email"
+      />
+      <label for="email">Email</label>
+      <small *ngIf="email?.invalid && email?.touched" class="p-error block"
+        >Digite um email valido</small
+      >
+    </span>
+    <span class="p-float-label">
+      <input
+        class="p-inputtext-lg"
+        id="password"
+        name="password"
+        type="password"
+        pInputText
+        formControlName="password"
+      />
+      <label for="password">Senha</label>
+    </span>
+
+    <button
+      [disabled]="loginForm.invalid"
+      pButton
+      type="submit"
+      class="p-button-danger"
+      (click)="onSubmit()"
+    >
+      Entrar
+    </button>
+  </form>
+  <small *ngIf="loginError" class="p-error block"
+    >Email ou Senha inválidos</small
+  >
+</div>
+
+<p-blockUI [blocked]="loading">
+  <p-progressSpinner></p-progressSpinner>
+</p-blockUI>
