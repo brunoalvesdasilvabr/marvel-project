@@ -21,15 +21,19 @@ export class HttpconfigInterceptor implements HttpInterceptor {
     request = this.handleRequest(request);
     return next.handle(request);
   }
-  handleRequest(request: HttpRequest<unknown>) {
-    const token = this.authStore.getToken();
-    if (token) {
-      request = request.clone({
-        params: request.params.set('apiKey', environment.apiKey),
-      });
-      console.log({request})
+  handleRequest(request: HttpRequest<unknown>):HttpRequest<unknown> {
+    const loginUrl =  `${environment.login}/v1/accounts:signInWithPassword?key=${environment.apiKey}`
+    if(request.url !== loginUrl){
+      const token = this.authStore.getToken();
+      if (token) {
+        request = request.clone({
+          params: request.params.set('apiKey', environment.apiKey),
+        });
+        console.log({request})
+      }
+  
     }
-
+  
     return request;
   }
 }

@@ -3,8 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HomeRoutingModule } from './home-routing.module';
 import { HomeComponent } from './pages/home/home.component';
-import { HttpconfigInterceptor } from 'src/app/core/interceptor/httpconfig.interceptor';
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
+
 import { HomeService } from './services/home.service';
 
 @NgModule({
@@ -15,9 +14,6 @@ import { HomeService } from './services/home.service';
     HomeRoutingModule,
  
   ],
-  providers: [{
-    provide:HTTP_INTERCEPTORS,
-    useClass:HttpconfigInterceptor,
-    multi:true  },HomeService],
+  providers: [HomeService],
 })
 export class HomeModule {}

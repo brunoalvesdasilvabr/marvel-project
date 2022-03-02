@@ -6,7 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from '@modules/layout/layout.module';
-
+import { HttpconfigInterceptor } from 'src/app/core/interceptor/httpconfig.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,10 @@ import { LayoutModule } from '@modules/layout/layout.module';
     LayoutModule
     
   ],
-  providers: [],
+  providers: [{
+    provide:HTTP_INTERCEPTORS,
+    useClass:HttpconfigInterceptor,
+    multi:true  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
