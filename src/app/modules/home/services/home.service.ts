@@ -10,6 +10,6 @@ export class HomeService {
   constructor(private http: HttpClient) { }
 
   getHeroes(){
-    return this.http.get(`${environment.marvelapi}/v1/public/characters`)
+    return this.http.get(`${environment.marvelapi}:443/v1/public/characters`)
   }
 }
