@@ -22,8 +22,8 @@ export class HttpconfigInterceptor implements HttpInterceptor {
     return next.handle(request);
   }
   handleRequest(request: HttpRequest<unknown>):HttpRequest<unknown> {
-    const md5 ='8D40957D6791ED34BC8CEA4C51492D7F'
-    const timestamp = '1646219530'
+    const md5 ='65a8de8df1cae1ba0ee3274fab66912b'
+    const timestamp = '1646220618'
     const loginUrl =  `${environment.login}/v1/accounts:signInWithPassword?key=${environment.apiKey}`
     if(request.url !== loginUrl){
       const token = this.authStore.getToken();
@@ -32,7 +32,7 @@ export class HttpconfigInterceptor implements HttpInterceptor {
           params: request.params.set('ts', timestamp),
         });
         request = request.clone({
-          params: request.params.set('apiKey', environment.marvelApiKey),
+          params: request.params.set('apikey', environment.marvelApiKey),
         });
         request = request.clone({
           params: request.params.set('hash', md5),
