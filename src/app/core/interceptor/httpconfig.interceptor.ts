@@ -38,7 +38,6 @@ export class HttpconfigInterceptor implements HttpInterceptor {
           params: request.params.set('hash', md5),
         });
       
-        console.log({request})
       }
   
     }

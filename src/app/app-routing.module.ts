@@ -4,6 +4,7 @@ import { LoginComponent } from "./modules/login/pages/login/login.component";
 
 import { LayoutComponent } from "@modules/layout/components/layout/layout.component";
 import { AuthGuard } from "./core/guards/auth/auth.guard";
+import { LoginGuard } from "./core/guards/login/login.guard";
 
 const routes:Routes = [
     {
@@ -12,6 +13,7 @@ const routes:Routes = [
         pathMatch:'full'
     },{
         path:'login',
+        canActivate:[LoginGuard],
         component:LoginComponent,
         loadChildren:():Promise<unknown>=> import('@modules/login/login.module').then(m => m.LoginModule)
     },{

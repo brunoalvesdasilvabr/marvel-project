@@ -10,12 +10,38 @@ import { StorageService } from 'src/app/shared/services/storage/storage.service'
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent implements OnInit {
+  isRoute = {
+    characthers: false,
+    favorites: false,
+  };
   constructor(private storageService: StorageService, private router: Router) {}
+  ngOnInit(): void {
+    const path = this.router.url.split("/")[2]
+    this.activeHeaderItem(path);
+  }
 
-  ngOnInit(): void {}
-
+  activeHeaderItem(routePath:string) {
+   switch (routePath) {
+       case 'characthers':
+           console.log('okkk')
+        this.isRoute.favorites = false;
+           this.isRoute.characthers = true;
+           break;
+       case 'favorites':
+        this.isRoute.characthers = false;
+        this.isRoute.favorites = true;
+           break;
+   
+       default:
+           break;
+   }
+  }
   logout() {
     this.storageService.remove(StorageKeys.token);
     this.router.navigate(['/login']);
+  }
+  navigateToRoute(path:string){
+      this.router.navigateByUrl(`home/${path}`)
+this.activeHeaderItem(path)
   }
 }

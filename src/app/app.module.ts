@@ -8,6 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from '@modules/layout/layout.module';
 import { HttpconfigInterceptor } from 'src/app/core/interceptor/httpconfig.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { HomeRoutingModule } from '@modules/home/home-routing.module';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { HTTP_INTERCEPTORS } from '@angular/common/http';
     BrowserAnimationsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    HomeRoutingModule,
     LayoutModule
     
   ],
