@@ -3,7 +3,12 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  login:'https://identitytoolkit.googleapis.com',
+  marvelapi:'https://gateway.marvel.com',
+  apiKey:'AIzaSyAmzyyJ-cykgI-Nqy_Htajmh1EsLqmUE8Q',
+  marvelApiKey:'1ee494683b97ee0b7bcc1085a35205d0',
+
 };
 
 /*
