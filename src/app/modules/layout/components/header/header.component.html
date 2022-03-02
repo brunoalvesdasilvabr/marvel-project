@@ -1,0 +1,12 @@
+<header class="header">
+  <div class="header__container">
+    <img
+      class="header__logo"
+      src="../../../../../assets/images/logo/Marvel_Logo..png"
+    />
+    <div class="header__item"  [class.header__item--active]="isRoute.characthers" (click)="navigateToRoute('characthers')">Characters</div>
+    <div class="header__item" [class.header__item--active]="isRoute.favorites" (click)="navigateToRoute('favorites')">Favoritos</div>
+    <div class="header__item" (click)="logout()">Sair</div>
+    <input clas type="text"  pInputText placeholder="Search" />
+  </div>
+</header>

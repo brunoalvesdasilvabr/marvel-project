@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
   formSubmited(res: LoginResponseInterface) {
     this.loading = false;
     this.authStoreService.setToken(res);
-    this.router.navigate(['/home'])
+    this.router.navigate(['/home/characthers'])
   }
 
   handleLoginError(err: HttpErrorResponse) {
