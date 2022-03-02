@@ -6,8 +6,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ButtonModule } from 'primeng/button';
 import { LoginComponent } from './pages/login/login.component';
 import { LoginService } from './services/login/login.service';
-import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { BlockUIModule } from 'primeng/blockui';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 @NgModule({
   declarations: [LoginComponent],
@@ -18,8 +18,8 @@ import { BlockUIModule } from 'primeng/blockui';
     ButtonModule,
     FormsModule,
     ReactiveFormsModule,
-    ProgressSpinnerModule,
     BlockUIModule,
+    SharedModule
   ],
   providers: [LoginService],
 })

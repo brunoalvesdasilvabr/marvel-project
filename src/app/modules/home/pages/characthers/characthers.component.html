@@ -1,0 +1,7 @@
+<main *ngIf="!loading">
+    <div *ngFor="let hero of heroesList">
+        <app-card [imgPath]="hero.thumbnail.path + '.'+ hero.thumbnail.extension" [cardDescription]="hero.name"></app-card>
+    </div>
+
+</main>
+    <app-loading *ngIf="loading" class="loading-container"></app-loading>
